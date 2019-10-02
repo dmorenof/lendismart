@@ -1,0 +1,16 @@
+{
+  "name": "dmorenof/lendismart",
+  "description": "Lendismart integration API",
+  "authors": [
+    {
+      "name": "David Moreno Falero",
+      "email": "david.moreno.falero@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "dmorenof\\lendismart\\": "src/"
+    }
+  }
+}
