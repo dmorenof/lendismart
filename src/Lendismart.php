@@ -122,14 +122,13 @@ class Lendismart
      * </code>
      *
      * @param string $merchant_id
-     * @param array $application
+     * @param Application $application
      * @return Structures\NewApplicationResponse
      * @throws Exception
      */
-    public function createNewApplication($merchant_id, array $application)
+    public function createNewApplication($merchant_id, Application $application)
     {
-        $Response = new Response($this->post('/merchants/' . $merchant_id . '/applications',
-            new Application($application)));
+        $Response = new Response($this->post('/merchants/' . $merchant_id . '/applications', $application));
         $response = $Response->getResponse();
 
         if (!isset($response['appId'])) {
