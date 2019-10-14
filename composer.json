@@ -15,5 +15,6 @@
     "psr-4": {
       "dmorenof\\lendismart\\": "src/"
     }
-  }
+  },
+  "license": "MIT"
 }
