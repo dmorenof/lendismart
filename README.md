@@ -50,6 +50,10 @@ Prepare the authentication and environment
 Example to create an application
 
      try {
+        $Lendismart = new dmorenof\lendismart\Lendismart\Lendismart();
+        $Lendismart->setEndpoint('https://api-staging.lendismart.com/externalAPI/v1');
+        $Lendismart->setApiKey(AUTH_TOKEN);
+        
         $Application = new dmorenof\lendismart\Lendismart\Structures\Application([
             'goodsType' => 10101,
             'reference' => '2018/J3212',
@@ -154,6 +158,10 @@ Returns the dmorenof\lendismart\Lendismart\Structures\NewApplicationResponse obj
 Example to check an application
 
     try {
+        $Lendismart = new dmorenof\lendismart\Lendismart\Lendismart();
+        $Lendismart->setEndpoint('https://api-staging.lendismart.com/externalAPI/v1');
+        $Lendismart->setApiKey(AUTH_TOKEN);
+        
         $ApplicationResponse = $Lendismart->application($application_identifier, 'long');
         $application_status = $ApplicationResponse->status;
     } catch (Exception $exception) {
@@ -208,6 +216,26 @@ Get the raw response for debugging reasons
 
 Get the HTTP code for debugging reasons
 
+### Example 
+
+    try {
+        $Lendismart = new dmorenof\lendismart\Lendismart\Lendismart();
+        $Lendismart->setEndpoint('https://api-staging.lendismart.com/externalAPI/v1');
+        $Lendismart->setApiKey(AUTH_TOKEN);
+        
+        $ApplicationResponse = $Lendismart->application($application_identifier, 'long');
+        $application_status = $ApplicationResponse->status;
+    } catch (Exception $exception) {
+        echo $exception->getMessage();
+    } finally {
+        if (isset($Lendismart)) {
+            echo $Lendismart->getCallUrl();
+            echo $Lendismart->getPostData();
+            echo $Lendismart->getHttpCode();
+            echo $Lendismart->getRawResponse();
+        } 
+    }
+
 ## Validation::class
 
 Dynamically validates the objects on the Structures creation
@@ -253,7 +281,7 @@ Example:
 
 Sets a dictionary
 
-### getById(int $value_id)
+### Dictionary::getById(int $value_id)
 
 Gets the string name from an id
 
