@@ -16,15 +16,20 @@ use dmorenof\lendismart\Dictionary;
 class ResponseCodes extends Dictionary
 {
     protected $values = [
-        '000' => 'Success',
-        '001' => 'Missing API_KEY',
-        '002' => 'invalid API_KEY',
-        '003' => 'Application search error',
-        '004' => 'Application not found',
-        '006' => 'Permission denied',
-        '007' => 'Missing Application ID',
-        '009' => 'Generic error',
-        '010' => 'Unknown error',
-        '011' => 'Unknown error',
+        '000' => 'Llamada correcta',
+        '001' => 'Falta el API_KEY en la llamada',
+        '002' => 'El API_KEY no es válido',
+        '003' => 'Error en la búsqueda de la solicitud',
+        '004' => 'No se ha encontrado la solicitud',
+        '005' => 'Error desconocido',
+        '006' => 'El usuario no cuenta con permisos suficientes',
+        '007' => 'Falta el applicationId',
+        '009' => 'Error genérico',
+        '010' => 'No se ha informado el docIdNumber',
+        '011' => 'El docIdNumber informado no es válido',
+        '012' => 'No se ha incluido en la llamada ningún applicant',
+        '013' => 'Se ha incluido un cardNumber/accountNumber pero no se ha incluido el campo paymentMethod',
+        '014' => 'El campo accountNumber informado no es un iban / CCC válido',
+        '015' => 'El campo cardNumber informado no es una cuenta válida',
     ];
 }
