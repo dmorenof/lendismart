@@ -116,9 +116,7 @@ class Validation
 
                 case 'DateTime':
                     if (!$this->validateDateTime($value)) {
-                        if (!$this->validateDateTime($value, 'Y-m-d')) {
-                            throw new Exception('Validation error: "' . $value . '" is not a valid Date Time for "' . $field . '" in object "' . get_called_class() . '"');
-                        }
+                        throw new Exception('Validation error: "' . $value . '" is not a valid Date Time for "' . $field . '" in object "' . get_called_class() . '"');
                     }
 
                     break;
