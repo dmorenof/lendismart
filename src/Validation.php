@@ -147,6 +147,7 @@ class Validation
     }
 
     /**
+     * Default format ISO8601 extended
      * @param string $value
      * @param string $format
      * @return bool
