@@ -152,7 +152,7 @@ class Validation
      * @param string $format
      * @return bool
      */
-    private function validateDateTime($value, $format = 'Y-m-d\TH:i:s.000Z')
+    private function validateDateTime($value, $format = 'Y-m-d\TH:i:s.000\Z')
     {
         $date = DateTime::createFromFormat($format, $value);
 
