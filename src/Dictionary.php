@@ -26,7 +26,7 @@ class Dictionary
     public function getById($value_id)
     {
         if (!isset($this->values[$value_id])) {
-            throw new Exception('Value not found for ' . $value_id . ' in ' . get_called_class());
+            throw new Exception('Value ' . $value_id . ' not found in ' . get_called_class());
         }
 
         return $this->values[$value_id];
