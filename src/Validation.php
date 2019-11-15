@@ -199,20 +199,4 @@ class Validation
 
         return true;
     }
-
-    /**
-     * @param $dictionary
-     * @return Dictionary | object
-     * @throws Exception
-     */
-    private function instanceDictionary($dictionary)
-    {
-        try {
-            $class = new ReflectionClass('\\Lendismart\\Dictionaries\\' . $dictionary);
-
-            return $class->newInstanceArgs();
-        } catch (Exception $e) {
-            throw new Exception('Instantiation error dictionary: "' . $dictionary . '" does not exist');
-        }
-    }
 }
