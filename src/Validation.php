@@ -64,8 +64,8 @@ class Validation
      */
     private function checkMandatoryFields($inputValues)
     {
-        foreach ($this->structure as $field => $value) {
-            if (isset($field['required']) && $field['required'] === true) {
+        foreach ($this->structure as $field => $rules) {
+            if (isset($rules['required']) && $rules['required'] === true) {
                 if (!array_key_exists($field, $inputValues)) {
                     throw new Exception('Validation error: "' . $field . '" is is mandatory in "' . get_called_class() . '"');
                 }
